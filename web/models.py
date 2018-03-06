@@ -9,7 +9,7 @@ class User(models.Model):
     name = models.CharField(max_length=30)
     user_name = models.CharField(max_length= 15,unique=True,primary_key=True)
     gender = models.IntegerField(choices=sex)
-
+    profile = models.ImageField(upload_to='profile_images' ,blank=True)
 
     def __str__(self):
         return '{}'.format(self.user_name)
@@ -17,7 +17,7 @@ class User(models.Model):
 class recipe(models.Model):
     food_id = models.CharField(max_length=5 ,unique=True,primary_key=True)
     food_title = models.CharField(max_length=20)
-
+    food_image = models.ImageField(upload_to='recipe_images', blank=True)
     def __str__(self):
         return '{}-{}'.format(self.food_id ,self.food_title)
 
