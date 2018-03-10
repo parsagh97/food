@@ -10,6 +10,7 @@ class User(models.Model):
     user_name = models.CharField(max_length= 15,unique=True,primary_key=True)
     gender = models.IntegerField(choices=sex)
     profile = models.ImageField(upload_to='profile_images' ,blank=True)
+    email = models.EmailField(blank=True)
 
     def __str__(self):
         return '{}'.format(self.user_name)
