@@ -5,12 +5,16 @@
     <title>Hello:)</title>
 </head>
 <body>
-<input type="text" placeholder="name"><br>
-<input type="text" placeholder="username"><br>
-<input type="text" placeholder="password"><br> {#later change it to type = "password"#}
-<input type="text" placeholder="sex"><br>
-<input type = "email" placeholder="email"><br>
-<input type="file">profile picture<br>
-<button type="submit">register</button>
+{#<input type="text" placeholder="name"><br>#}
+{#<input type="text" placeholder="username"><br>#}
+{#<input type="text" placeholder="password"><br> {#later change it to type = "password"#}
+{#<input type="text" placeholder="sex"><br>#}
+{#<input type = "email" placeholder="email"><br>#}
+{#<input type="file">profile picture<br>#}
+    <form method="get">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">register</button>
+    </form>
 </body>
 </html>

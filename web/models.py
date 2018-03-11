@@ -11,6 +11,7 @@ class User(models.Model):
     gender = models.IntegerField(choices=sex)
     profile = models.ImageField(upload_to='profile_images' ,blank=True)
     email = models.EmailField(blank=True)
+    password = models.CharField(max_length=15 ,blank=True)
 
     def __str__(self):
         return '{}'.format(self.user_name)
